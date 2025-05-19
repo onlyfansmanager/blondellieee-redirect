@@ -1,34 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Redirecting...</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: sans-serif;
+      font-family: Arial, sans-serif;
+      background: #fff;
       text-align: center;
       padding: 2rem;
-      background: #fdfdfd;
-      color: #222;
+      color: #111;
     }
     .hidden { display: none; }
-    .link-box {
-      word-break: break-all;
-      background: #eee;
-      padding: 1rem;
+    .box {
+      background: #f4f4f4;
+      padding: 1.5rem;
+      border-radius: 10px;
       margin-top: 1rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #007bff;
+      color: white;
+      padding: 0.8rem 1.2rem;
       border-radius: 8px;
+      margin-top: 1rem;
+      text-decoration: none;
+      font-size: 1.1rem;
     }
   </style>
 </head>
 <body>
-  <div id="tiktok-warning" class="hidden">
-    <h2>🚫 Открыть в браузере</h2>
-    <p>TikTok блокирует эту ссылку.</p>
-    <p>Нажми на три точки <strong>⋯</strong> в правом верхнем углу и выбери<br><strong>“Открыть в браузере”</strong></p>
-    <div class="link-box">
-      https://getallmylinks.com/blondellieee
+  <div id="tiktok-view" class="hidden">
+    <h2>🚫 TikTok ограничивает переход</h2>
+    <p>Чтобы продолжить:</p>
+    <div class="box">
+      🔹 Нажми на <strong>⋯</strong> в правом верхнем углу<br>
+      🔹 Выбери <strong>“Открыть в браузере”</strong>
+    </div>
+    <p>После этого ты увидишь нужную страницу.</p>
+    <div class="box">
+      Или скопируй и вставь в браузере:<br>
+      <strong>https://getallmylinks.com/blondellieee</strong>
     </div>
   </div>
 
@@ -36,7 +50,7 @@
     const isTikTok = navigator.userAgent.includes("TikTok");
 
     if (isTikTok) {
-      document.getElementById("tiktok-warning").classList.remove("hidden");
+      document.getElementById("tiktok-view").classList.remove("hidden");
     } else {
       window.location.href = "https://getallmylinks.com/blondellieee";
     }
